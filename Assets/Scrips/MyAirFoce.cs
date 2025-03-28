@@ -20,7 +20,7 @@ public class MyAirFoce : MonoBehaviour
     void Update()
     {
         //Thrust
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             rb.AddForce(transform.forward * enginePower);
         }

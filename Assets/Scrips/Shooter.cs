@@ -4,6 +4,8 @@ public class Shooter : MonoBehaviour
 {
     public Transform firePoint;
 
+    public GameObject vfxFirePoint, vfxHitPoint;
+
     void Update()
     {
         Shooting();
@@ -18,6 +20,24 @@ public class Shooter : MonoBehaviour
         if (Physics.Raycast(firePoint.position, transform.forward, out hit, 30f))
         {
             Debug.DrawRay(firePoint.position, transform.forward * 30f, Color.red);
-        }
-    }//Shooting
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Instantiate(vfxFirePoint, firePoint.position, Quaternion.identity);
+                Instantiate(vfxHitPoint, hit.point, Quaternion.identity);
+
+                if (hit.collider.name == "meteorite")
+                {
+                    Enemy enemy = hit.collider.GetComponent<Enemy>();
+
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(5);
+                    }
+
+                }
+
+            }//KeyCode.Space
+        }//Shooting
+    }
 }
