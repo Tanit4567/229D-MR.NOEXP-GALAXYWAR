@@ -15,11 +15,6 @@ public class Enemy : MonoBehaviour
 
     }//TakeDamage
 
-    public GameObject healthBar;
-    void Update()
-    {
-        healthBar.transform.localScale = new Vector3(health * 0.003f, 0.005f, 0.001f);
-
-    }// Update
+    
 
 }
