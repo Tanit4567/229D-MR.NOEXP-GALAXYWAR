@@ -23,4 +23,9 @@ public class MainMenuControl : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

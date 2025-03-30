@@ -12,16 +12,15 @@ public class BigEnemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-
-            Invoke("ReturnToCredit", 1f); // หน่วงเวลา 2 วินาทีก่อนกลับไป Main Menu
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(2);
         }
+        
 
     }//TakeDamage
 
     void ReturnToCredit()
     {
-        SceneManager.LoadScene("Credit");
+        
     }
 
     public GameObject healthBar;
