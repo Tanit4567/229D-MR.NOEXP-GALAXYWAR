@@ -23,6 +23,8 @@ public class Shooter : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                
+
                 Instantiate(vfxFirePoint, firePoint.position, Quaternion.identity);
                 Instantiate(vfxHitPoint, hit.point, Quaternion.identity);
 
@@ -47,6 +49,9 @@ public class Shooter : MonoBehaviour
                     }
 
                 }
+                AudioSource source = GetComponent<AudioSource>();
+                source.Play();
+
             }//KeyCode.Space
         }//Shooting
     }

@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        
+
         if (other.CompareTag("DangerousObject")) // ถ้าชนวัตถุที่มี Tag นี้
         {
             Die();
@@ -16,14 +18,12 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player Died!");
-        Destroy(gameObject); // ซ่อนผู้เล่น (หรือใช้ Destroy(gameObject) ถ้าต้องการให้หายไป)
-
-        // โหลดฉากใหม่หลังจากตาย
-        Invoke("RestartLevel", 2f); // รอ 2 วินาทีก่อนโหลดใหม่
+        Invoke("ReturnToMainMenu", 1f); // หน่วงเวลา 2 วินาทีก่อนกลับไป Main Menu
+        gameObject.SetActive(false); // ซ่อนผู้เล่นแทนการทำลาย
     }
 
-    void RestartLevel()
+    void ReturnToMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenu"); // โหลดฉาก Main Menu
     }
 }
