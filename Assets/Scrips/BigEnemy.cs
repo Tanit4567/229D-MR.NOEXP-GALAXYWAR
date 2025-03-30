@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BigEnemy : MonoBehaviour
 {
@@ -11,9 +12,17 @@ public class BigEnemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+
+            Invoke("ReturnToCredit", 1f); // หน่วงเวลา 2 วินาทีก่อนกลับไป Main Menu
+            gameObject.SetActive(false);
         }
 
     }//TakeDamage
+
+    void ReturnToCredit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
 
     public GameObject healthBar;
     void Update()

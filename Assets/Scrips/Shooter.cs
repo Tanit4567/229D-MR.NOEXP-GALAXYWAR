@@ -35,6 +35,9 @@ public class Shooter : MonoBehaviour
                     if (enemy != null)
                     {
                         enemy.TakeDamage(5);
+
+                        AudioSource source = GetComponent<AudioSource>();
+                        source.Play();
                     }
 
                 }
@@ -46,11 +49,13 @@ public class Shooter : MonoBehaviour
                     if (enemy != null)
                     {
                         enemy.TakeDamage(5);
+
+                        AudioSource source = GetComponent<AudioSource>();
+                        source.Play();
                     }
 
                 }
-                AudioSource source = GetComponent<AudioSource>();
-                source.Play();
+                
 
             }//KeyCode.Space
         }//Shooting
