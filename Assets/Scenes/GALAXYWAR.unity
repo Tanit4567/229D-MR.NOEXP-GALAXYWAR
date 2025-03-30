@@ -11757,7 +11757,7 @@ PrefabInstance:
       addedObject: {fileID: 528717051}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d0f0a2488d06510448c48b35394ef3f5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 528717050}
+      addedObject: {fileID: 528717054}
   m_SourcePrefab: {fileID: 100100000, guid: d0f0a2488d06510448c48b35394ef3f5, type: 3}
 --- !u!1 &528717043 stripped
 GameObject:
@@ -11808,7 +11808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a718c138b20419b499c3d92b17e6ff7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tumble: 0.05
+  tumble: 0.02
 --- !u!114 &528717047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11844,7 +11844,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.019985009, y: 0.01525696, z: 0.01627278}
   m_Center: {x: 0.000004744623, y: -0.000037129736, z: -0.00003460981}
---- !u!114 &528717050
+--- !u!114 &528717051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528717043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bc99d14706ee2458e275958d5c8ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &528717054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11858,18 +11870,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   healthBar: {fileID: 1962531995}
---- !u!114 &528717051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528717043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49bc99d14706ee2458e275958d5c8ea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &530617613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33884,7 +33884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a718c138b20419b499c3d92b17e6ff7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tumble: 0.3
+  tumble: 0.1
 --- !u!54 &1492596315
 Rigidbody:
   m_ObjectHideFlags: 0
