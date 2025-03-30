@@ -13,13 +13,13 @@ public class Shooter : MonoBehaviour
 
     void Shooting()
     {
-        Debug.DrawRay(firePoint.position, transform.forward * 40f, Color.green);
+        Debug.DrawRay(firePoint.position, transform.forward * 60f, Color.green);
 
         RaycastHit hit;
 
-        if (Physics.Raycast(firePoint.position, transform.forward, out hit, 40f))
+        if (Physics.Raycast(firePoint.position, transform.forward, out hit, 60f))
         {
-            Debug.DrawRay(firePoint.position, transform.forward * 40f, Color.red);
+            Debug.DrawRay(firePoint.position, transform.forward * 60f, Color.red);
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -37,6 +37,16 @@ public class Shooter : MonoBehaviour
 
                 }
 
+                if (hit.collider.name == "meteorite")
+                {
+                    BigEnemy enemy = hit.collider.GetComponent<BigEnemy>();
+
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(5);
+                    }
+
+                }
             }//KeyCode.Space
         }//Shooting
     }
